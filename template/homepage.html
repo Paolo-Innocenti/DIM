@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport'
+          content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>HomePage</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        div.highway-slider {
+            display:flex;
+            justify-content:center;
+            width:100%;
+        }
+
+        div.highway-barrier {
+            overflow:hidden;
+            position:relative;
+        }
+
+        ul.highway-lane {
+            display:flex;
+            height:100%;
+        }
+
+        li.highway-car {
+            flex:1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        @keyframes translateinfinite {
+            100% { transform:translateX(calc(-400px * 8));  }
+        }
+
+        ul.highway-lane {
+            width:calc(400px * 12);
+        }
+
+        li.highway-car {
+            width:400px;
+            animation:translateinfinite 150s linear infinite;
+            margin-right: 7px;
+        }
+
+        #infinite div.highway-barrie::before {
+            content: " ";
+            position:absolute;
+            z-index:9;
+            width:400px;
+            height:100%;
+            top:0;left:0;
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        }
+
+        #infinite div.highway-barrie::after {
+            content: " ";
+            position:absolute;
+            z-index:9;
+            width:400px;
+            height:100%;
+            top:0;right:0;
+            background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <main class="h-screen w-screen flex flex-col">
+        <section id="navbar" class="xl:px-12 xl:py-6 p-4">
+            <div class='flex items-center justify-between'>
+                <div class="w-32">
+                    <img src="./assets/logo300.png" alt="logo" />
+                </div>
+                <div class="flex">
+                    <a class="mr-4 p-2 border border-1 rounded-full border-white hover:border-gray-200 transition-colors duration-300" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </a>
+                    <a class="mr-4 p-2 border border-1 rounded-full border-white hover:border-gray-200 transition-colors duration-300" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                    </a>
+                    <a class="p-2 border border-1 rounded-full border-white hover:border-gray-200 transition-colors duration-300" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE -->
+        <section id="page" class="h-full flex flex-col">
+            <div id="infinite" class="highway-slider flex-grow">
+                <div class="highway-barrier">
+                    <ul class="highway-lane">
+                        <li class="highway-car"><img class="pb-16" src="assets/image1.jpg" /></li>
+                        <li class="highway-car"><img src="assets/image2.jpg" /></li>
+                        <li class="highway-car"><img class="pt-20" src="assets/image3.jpg" /></li>
+                        <li class="highway-car"><img src="assets/image4.jpg" /></li>
+
+                        <li class="highway-car"><img class="pt-24" src="assets/image1.jpg" /></li>
+                        <li class="highway-car"><img src="assets/image2.jpg" /></li>
+                        <li class="highway-car"><img class="pb-20" src="assets/image3.jpg" /></li>
+                        <li class="highway-car"><img src="assets/image4.jpg" /></li>
+
+                        <li class="highway-car"><img class="pb-16" src="assets/image1.jpg" /></li>
+                        <li class="highway-car"><img src="assets/image2.jpg" /></li>
+                        <li class="highway-car"><img class="pt-20" src="assets/image3.jpg" /></li>
+                        <li class="highway-car"><img src="assets/image4.jpg" /></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mb-10 mr-10 flex justify-end absolute bottom-0 right-0">
+                <a href="#" class="relative inline-flex items-center justify-center px-8 py-2 overflow-hidden font-medium text-black transition duration-300 ease-out border-2 border-black rounded-full shadow-md group bg-white">
+                        <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-black group-hover:translate-x-0 ease">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </span>
+                    <span class="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">Workspace</span>
+                    <span class="relative invisible">Workspace</span>
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

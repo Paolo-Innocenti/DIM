@@ -76,3 +76,28 @@ This is the usecase diagram representing the described model for an admin user:
 This is the UML representing the described model:
 
 ![alt text](images/uml-11-12-2022.png)
+
+
+## Design
+
+I prototyped the design with Figma, which I found nice and easy to use. 
+For the first implementation, I figured that only 4 pages would be necessary:
+
+- Login page
+![login page](images/login.png)
+
+- Home page
+![home page](images/home.png)
+
+- Workspace page
+![Workspace page](images/workspace.png)
+
+- Image Details page
+![details page](images/image-details.png)
+
+After prototyping, I used TailwindCSS to style the HTML. I took some photos from unsplash.com to help visualize the design and used FeatherIcons as my source for the multiple icons.
+Credits for the images go to Jonas Allert, Josh Rich, Luca Bravo and SpaceX.
+
+Technically, a couple more pages will be needed down the line, like the user-creating page for admins. But I will take care of them once I have implemented the rest, since I can 
+create users directly in the database.
+

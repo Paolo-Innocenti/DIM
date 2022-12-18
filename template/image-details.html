@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport'
+    content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Image Details</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    },
+                    screens: {
+                        '3xl': '2560px',
+                        // => @media (min-width: 2120px) { ... }
+                    }
+                },
+            }
+        }
+    </script>
+    <link href='https://fonts.googleapis.com/css?family=Cambay' rel='stylesheet'>
+    <style>
+        html {
+            font-family: 'Cambay',serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <main class="h-screen w-screen flex flex-col">
+        <section id="navbar" class="xl:px-12 xl:py-6 p-4">
+            <div class='flex items-center md:justify-between justify-center'>
+                <div class="w-32">
+                    <img src="./assets/logo300.png" alt="logo" />
+                </div>
+                <div class="space-x-2 md:flex hidden">
+                    <a class="p-2 border border-1 rounded-full border-white hover:border-gray-200 transition-colors duration-300" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </a>
+                    <a class="p-2 border border-1 rounded-full border-white hover:border-gray-200 transition-colors duration-300" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                    </a>
+                    <a class="p-2 border border-1 rounded-full border-white hover:border-gray-200 transition-colors duration-300" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="page" class="flex flex-col xl:flex-row px-6 xl:px-12 h-full my-4">
+            <div class="flex flex-col justify-between xl:mr-3 w-full">
+                <div>
+                    <a href="#" class="relative inline-flex items-center justify-center px-8 py-2 overflow-hidden font-medium text-black transition duration-300 ease-out border-2 border-black rounded-full shadow-md group">
+                        <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-black group-hover:translate-x-0 ease">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        </span>
+                        <span class="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">Back</span>
+                        <span class="relative invisible">Back</span>
+                    </a>
+                </div>
+                <div class="h-full flex items-center justify-center my-5 relative">
+                    <img class="rounded-xl xl:absolute w-auto h-auto max-w-full max-h-full" src="assets/image3.jpg" alt="image">
+                </div>
+            </div>
+
+            <div class="xl:w-4/6 w-full flex flex-col justify-between xl:ml-3">
+                <div class="flex justify-between items-start">
+                    <div class="flex flex-col w-full">
+                        <div class="flex items-center justify-between w-full">
+                            <span class="text-3xl overflow-hidden text-ellipsis whitespace-nowrap">SpaceX leaving</span>
+
+                            <a href="#" class="block md:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+                            </a>
+                        </div>
+                        <span class="pt-2 text-gray-500">John Doe</span>
+                    </div>
+                    <button class="float-right bg-white hover:bg-black border-2 border-black py-2 px-8 text-black hover:text-white rounded-full hidden md:block shadow-md">Download</button>
+                </div>
+
+                <div class="h-full mt-6 flex flex-col justify-between">
+                    <div>
+                        <div class="sm:hidden">
+                            <label for="tabs" class="sr-only">Select a tab</label>
+                            <select id="tabs" name="tabs" class="block w-full rounded-md border-gray-300 focus:border-black focus:ring-black">
+                                <option>Metadata</option>
+
+                                <option>Formats</option>
+
+                                <option selected>Technical</option>
+
+                            </select>
+                        </div>
+                        <div class="hidden sm:block">
+                            <nav class="-mb-px flex" aria-label="Tabs">
+                                <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm">Metadata</a>
+                                <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm">Formats</a>
+                                <a href="#" class="border-black text-black w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm" aria-current="page">Technical</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <form class="w-full h-full pt-6 flex flex-col">
+                        <div class="space-y-16 md:space-y-5">
+                            <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:pt-5">
+                                <label for="first-name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">Title</label>
+                                <div class="mt-1 sm:col-span-2 sm:mt-0">
+                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full float-right rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm" value="SpaceX leaving">
+                                </div>
+                            </div>
+
+                            <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:pt-5">
+                                <label for="first-name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">Description</label>
+                                <div class="mt-1 sm:col-span-2 sm:mt-0">
+                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full float-right rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="float-right bg-black border-2 border-black hover:bg-gray-900 py-2 px-8 text-white rounded-full items-end flex-grow-0 self-end mb-5 mt-5 xl:mt-auto shadow-md">Save</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
