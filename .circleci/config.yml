@@ -30,6 +30,8 @@ jobs:
       - run: sudo docker-php-ext-install zip
       - run: sudo pecl install mongodb
 
+      - sonarcloud/scan
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -60,3 +62,13 @@ jobs:
 
       # run tests with phpunit or codecept
       - run: ./vendor/bin/pest
+
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.3
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
