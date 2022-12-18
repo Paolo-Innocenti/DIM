@@ -60,8 +60,8 @@ jobs:
       - run: touch storage/testing.sqlite
       #- run: php artisan migrate --env=testing --database=sqlite_testing --force
 
-      # run tests with phpunit or codecept
       - run: ./vendor/bin/pest
+      - run: ./vendor/bin/pest --coverage --coverage-clover tests/coverage/coverage.xml
 
 
 orbs:
