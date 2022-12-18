@@ -30,8 +30,6 @@ jobs:
       - run: sudo docker-php-ext-install zip
       - run: sudo pecl install mongodb
 
-      - sonarcloud/scan
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -62,6 +60,8 @@ jobs:
 
       - run: ./vendor/bin/pest
       - run: ./vendor/bin/pest --coverage --coverage-clover tests/coverage/coverage.xml
+
+      - sonarcloud/scan
 
 
 orbs:
