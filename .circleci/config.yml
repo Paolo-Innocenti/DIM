@@ -61,13 +61,8 @@ jobs:
 
       - run: ./vendor/bin/pest
       - run: XDEBUG_MODE=coverage ./vendor/bin/pest --coverage --coverage-clover tests/coverage/coverage.xml
-  test:
-    steps:
-      - run: ./vendor/bin/pest
-      - run: XDEBUG_MODE=coverage ./vendor/bin/pest --coverage --coverage-clover tests/coverage/coverage.xml
 
       - sonarcloud/scan
-
 
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
@@ -75,8 +70,5 @@ orbs:
 workflows:
   main:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
+      - build:
           context: SonarCloud
